@@ -14,7 +14,6 @@ def importer(request):
             continue
         obj = Courses(
             teacher = item["teacher"],
-            time = item["time"][0],
             price = item["price"][0],
             image = item["image"][0],
             title = item["title"][0],
