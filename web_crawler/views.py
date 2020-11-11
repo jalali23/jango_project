@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from .models import Courses,Articles
-import json 
-
+import json
 
 def importer(request):
     i = 0
@@ -14,8 +13,8 @@ def importer(request):
             continue
         obj = Courses(
            # teacher = item["teacher"],
-           # time=item["time"][0],
-            price = item["price"][0],
+          #  time=item["time"][0],
+            price = item["price"],
             image = item["image"][0],
             title = item["title"][0],
             category = "مدیریت و بازاریابی",
@@ -23,20 +22,21 @@ def importer(request):
         )
         obj.save()
     return HttpResponse("Done!")
-# def shower(request):
-#     data_list=[]
-#     data_str=''
-#     data_list=set(data_list)
-#     data=Courses.objects.all()
-#     for i in data:
-#         if i.category not in data_list:
-#             data_list.add(i.category+'--------\n')
-#     for i in data_list:
-#         data_str += str(i)+ "\n\t"
-#     print(data_str)
-#     return HttpResponse(data_list)
+def shower(request):
+    data_list=[]
+    data_str=''
+    data_list=set(data_list)
+    data=Courses.objects.all()
+    for i in data:
+        if i.category not in data_list:
+            data_list.add(i.category+'--------\n')
+    for i in data_list:
+        data_str += str(i)+ "\n\t"
+    print(data_str)
+    return HttpResponse(data_list)
+#
 # def deleter(request):
-#     query=Courses.objects.filter(category='دوره های رایگان')
+#     query=Courses.objects.filter(category='مدیریت و بازاریابی')
 #     for i in query:
 #         i.delete()
 #     return HttpResponse(query)
