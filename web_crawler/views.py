@@ -4,20 +4,20 @@ import json
 
 def importer(request):
     i = 0
-    f = open("./data/modirsabz_courses.json")
+    f = open("./data/articles5.json")
     a = json.load(f)
     f.close()
     for item in a:
         if i == 0:
             i = 1
             continue
-        obj = Courses(
-           # teacher = item["teacher"],
-          #  time=item["time"][0],
-            price = item["price"],
-            image = item["image"][0],
+        obj = Articles(
+            # teacher = item["teacher"],
+            # time=item["time"],
+            # price = item["price"],
+            # image = item["image"],
             title = item["title"][0],
-            category = "مدیریت و بازاریابی",
+            #category = "دوره های آنلاین",
             Url= item["url"],
         )
         obj.save()
@@ -29,14 +29,14 @@ def shower(request):
     data=Courses.objects.all()
     for i in data:
         if i.category not in data_list:
-            data_list.add(i.category+'--------\n')
+            data_list.add(i.category+'----\n')
     for i in data_list:
         data_str += str(i)+ "\n\t"
     print(data_str)
     return HttpResponse(data_list)
 #
 # def deleter(request):
-#     query=Courses.objects.filter(category='مدیریت و بازاریابی')
+#     query=Articles.objects.all()
 #     for i in query:
 #         i.delete()
 #     return HttpResponse(query)
