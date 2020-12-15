@@ -26,7 +26,7 @@ SECRET_KEY = 'db@1yad#io98fchqxsyx%x)+c#pc5*%2#dpv+wh$mc_0j3le%6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.103"]
+ALLOWED_HOSTS = ["192.168.1.105","127.0.0.1"]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'searchapp',
     'web_crawler',
+    'articles_app',
 ]
 
 MIDDLEWARE = [

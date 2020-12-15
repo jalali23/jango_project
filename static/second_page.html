@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>second_page</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style1.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="row1">
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top ">
+			  <!-- Toggler/collapsibe Button -->
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <!-- Navbar links -->
+			  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			    <ul class="navbar-nav">
+			        <li class="nav-item">
+		   				<a href="#" class="nav-link" >مدیریت و بازاریابی</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">ترفندها</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">عکاسی</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link"> نرم افزاهای کاربردی</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">مهارت های زبان</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">انیمیشن سازی</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">Programing And IT</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">وبینار</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link">دروس مدرسه ای </a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link"> آموزش های دانشگاهی</a>
+		   			</li>
+		   			<li class="nav-item">
+		   				<a href="#" class="nav-link"> مدیریت فردی و اجتماعی</a>
+		   			</li>
+			    </ul>
+			  </div>
+			  <nav>
+				  <form class="form-inline" action="/action_page.php">
+				    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+				    <button class="btn btn-success btn-sm" type="submit">Go</button>
+				  </form>
+			  </nav>
+			</nav>
+		</div>
+		<div class="container-fluid">
+            <div id="row1"class="row">
+			    <div class="col-sm-4 bg-HoneyDew">
+			    	<div class="row">
+                    	<div class="col">
+                    		<a href="articles_page.html" class="btn btn-info" role="button" id="articles"> همه ی مقالات
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="row">
+					    <div class="col">
+					    	<form>
+			                    <h5>
+			                    	<span class="badge badge-warning" id="title_filter">
+			                      	فیلترها
+			                        </span>
+			                    </h5>  
+							  <select name="cars" id="filter1" class="custom-select">
+							    <option value="مشاوره رایگان">مشاوره رایگان</option>
+							    <option value="ضمانت بازگشت وجه">ضمانت بازگشت وجه</option>
+							    <option value="ارتباط با استاد">ارتباط با استاد</option>
+							  </select>
+							</form>
+							<form>
+							  <h5>
+							  	 <span id="price" class="badge badge-warning">
+		                      	 قیمت
+		                         </span>
+							  </h5>
+							  <select name="cars" class="custom-select" >
+							    <option value="volvo">1000 تا 100000</option>
+							    <option value="fiat">100000 تا 200000</option>
+							    <option value="audi">200000 تا 300000</option>
+							    <option value="audi">300000 تا 400000</option>
+							    <option value="audi">400000 تا 500000</option>
+		                        <option value="audi">500000 به بالا</option>
+							  </select>
+							</form>
+							<button type="button" class="btn btn-outline-success btn-sm" id="filter2"
+							 style="margin-left:30%;width:40%;">
+								اعمال فیلتر
+							</button>
+					    </div>
+                    </div>
+                    <div class="row">
+					    <div class="col">
+	                    	<form>
+			                    <h5>
+			                    	<span class="badge badge-warning" id="title">
+			                      	برگزیده ها
+			                        </span>
+			                    </h5>
+								<select name="cars" id="cars" class="custom-select">
+								    <option value="مشاوره رایگان">برخی رایگان ها</option>
+								    <option value="ضمانت بازگشت وجه">برخی جدیدها</option>
+								    <option value="ارتباط با استاد">برخی پربازدیدها</option>
+								</select>
+							</form>
+							<button type="button" class="btn btn-outline-success btn-sm"
+							 style="margin-left:30%;width:40%;">
+								اعمال 
+							</button>
+						</div>	
+                    </div>
+			    </div>
+			    <div class="col-sm-8">
+			    	<div class="row">
+			    		<h4>
+			    			<span class="badge badge-pill badge-dark">
+                                   دوره ها
+			    			</span>
+                        </h4>
+			    	</div>
+			    	<!--Cards-->
+			    	<div class="row">
+					    <div class="card">
+							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
+							<div class="card-header">
+								<span class="badge badge-light">
+							        	آموزش برنامه نویس پایتون  از مبتدی
+							    </span>
+							     <div class="row1">
+								    <span class="badge badge-dark"  >
+							        	    استاد:
+						            </span>
+									<span class="badge badge-dark">
+										محمد اردوخانی
+						            </span>
+					            </div>
+							</div>
+							<div class="card-body" >
+								<div class="row1">
+									<span class="badge badge-success">قیمت:</span>
+									<span class="badge badge-success"style="margin-left:15px;">
+								     	2500000
+								    </span>
+								</div>
+								<div class="row2">
+									<span class="badge badge-warning">زمان:</span>
+									<span class="badge badge-warning">2:30:15</span>
+								</div>
+							</div>
+							<div class="footer">
+								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
+							</div>
+					    </div>
+					    <div class="card">
+							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
+							<div class="card-header">
+								<span class="badge badge-light">
+							        	آموزش برنامه نویس پایتون  از مبتدی
+							    </span>
+							     <div class="row1">
+								    <span class="badge badge-dark"  >
+							        	    استاد:
+						            </span>
+									<span class="badge badge-dark">
+										محمد اردوخانی
+						            </span>
+					            </div>
+							</div>
+							<div class="card-body" >
+								<div class="row1">
+									<span class="badge badge-success">قیمت:</span>
+									<span class="badge badge-success"style="margin-left:15px;">
+								     	2500000
+								    </span>
+								</div>
+								<div class="row2">
+									<span class="badge badge-warning">زمان:</span>
+									<span class="badge badge-warning">2:30:15</span>
+								</div>
+							</div>
+							<div class="footer">
+								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
+							</div>
+					    </div>
+					    <div class="card">
+							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
+							<div class="card-header">
+								<span class="badge badge-light">
+							        	آموزش برنامه نویس پایتون  از مبتدی
+							    </span>
+							     <div class="row1">
+								    <span class="badge badge-dark"  >
+							        	    استاد:
+						            </span>
+									<span class="badge badge-dark">
+										محمد اردوخانی
+						            </span>
+					            </div>
+							</div>
+							<div class="card-body" >
+								<div class="row1">
+									<span class="badge badge-success">قیمت:</span>
+									<span class="badge badge-success"style="margin-left:15px;">
+								     	2500000
+								    </span>
+								</div>
+								<div class="row2">
+									<span class="badge badge-warning">زمان:</span>
+									<span class="badge badge-warning">2:30:15</span>
+								</div>
+							</div>
+							<div class="footer">
+								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
+							</div>
+					    </div>
+					    <div class="card">
+							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
+							<div class="card-header">
+								<span class="badge badge-light">
+							        	آموزش برنامه نویس پایتون  از مبتدی
+							    </span>
+							     <div class="row1">
+								    <span class="badge badge-dark"  >
+							        	    استاد:
+						            </span>
+									<span class="badge badge-dark">
+										محمد اردوخانی
+						            </span>
+					            </div>
+							</div>
+							<div class="card-body" >
+								<div class="row1">
+									<span class="badge badge-success">قیمت:</span>
+									<span class="badge badge-success"style="margin-left:15px;">
+								     	2500000
+								    </span>
+								</div>
+								<div class="row2">
+									<span class="badge badge-warning">زمان:</span>
+									<span class="badge badge-warning">2:30:15</span>
+								</div>
+							</div>
+							<div class="footer">
+								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
+							</div>
+					    </div>
+					<!--End-Cards-->
+			    	</div>
+			        <div class="row">
+			        	<ul class="pagination justify-content-center">
+						  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+						  <li class="page-item"><a class="page-link" href="#">3</a></li>
+						  <li class="page-item"><a class="page-link" href="#">2</a></li>
+						  <li class="page-item"><a class="page-link" href="#">1</a></li>
+						  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+						</ul>
+			        </div>
+			    </div>
+			</div>
+			<!--footer-->
+			<div class="row bg-dark">
+				<button class="btn-info" data-toggle="collapse" style="margin-left:10px; ">درباره سایت</button>
+                    <p id='Footer'  style="margin-top:10px; ">
+                      به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
+                    </p>
+			</div>
+			<!--end footer-->
+		</div>
+	</body>
+</html>

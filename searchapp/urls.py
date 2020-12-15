@@ -2,5 +2,6 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('result',views.result,name='result') ,
+    path('results',views.results,name='results') ,
+    path('search',views.search,name='search') ,
 ]

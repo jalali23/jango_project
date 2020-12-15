@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>second_page</title>
+		<title>result</title>
 		<link rel="stylesheet" href={% static "css/bootstrap.min.css"%} >
 		<link rel="stylesheet" href={% static "css/style1.css"%} >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,7 +13,6 @@
 	<body>
 		<div class="row1">
 			<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top ">
-			  <!-- Toggler/collapsibe Button -->
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -72,7 +71,7 @@
 			    <div class="col-sm-4 bg-HoneyDew">
 			    	<div class="row">
                     	<div class="col">
-                    		<a href="#" class="btn btn-info" role="button" id="articles"> همه ی مقالات
+                    		<a href="articles_page.html" class="btn btn-info" role="button" id="articles"> همه ی مقالات
                     		</a>
                     	</div>
                     </div>
@@ -83,7 +82,7 @@
 			                    	<span class="badge badge-warning" id="title_filter">
 			                      	فیلترها
 			                        </span>
-			                    </h5>  
+			                    </h5>
 							  <select name="cars" id="filter1" class="custom-select">
 							    <option value="مشاوره رایگان">مشاوره رایگان</option>
 							    <option value="ضمانت بازگشت وجه">ضمانت بازگشت وجه</option>
@@ -105,7 +104,8 @@
 		                        <option value="audi">500000 به بالا</option>
 							  </select>
 							</form>
-							<button type="button" class="btn btn-outline-success btn-sm" id="filter2">
+							<button type="button" class="btn btn-outline-success btn-sm" id="filter2"
+							 style="margin-left:30%;width:40%;">
 								اعمال فیلتر
 							</button>
 					    </div>
@@ -124,7 +124,8 @@
 								    <option value="ارتباط با استاد">برخی پربازدیدها</option>
 								</select>
 							</form>
-							<button type="button" class="btn btn-outline-success btn-sm">
+							<button type="button" class="btn btn-outline-success btn-sm"
+							 style="margin-left:30%;width:40%;">
 								اعمال 
 							</button>
 						</div>	
@@ -279,12 +280,10 @@
 			</div>
 			<!--footer-->
 			<div class="row bg-dark">
-				<button class="btn-info" data-toggle="collapse" data-target="#footer">درباره سایت</button>
-				<div id="Footer" class="collapse">
-                    <p>
+				<button class="btn-info" style="margin-left:10px; ">درباره سایت</button>
+                    <p id='Footer'  style="margin-top:10px; ">
                       به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
                     </p>
-				</div>
 			</div>
 			<!--end footer-->
 		</div>
