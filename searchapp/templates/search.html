@@ -64,8 +64,8 @@
 			<div id="row1" class="row">
 				<div id="row2" class="row">
 					<div id="row3">
-						<form class="form-inline" action="/action_page.php">
-						    <input id="Search" class="form-control mr-sm-2" type="text" placeholder="جستجوی دوره">
+						<form class="form-inline" action={% url 'results' %} method="GET">
+						    <input id="Search" name="q" class="form-control mr-sm-2" type="text" placeholder="جستجوی دوره">
 						    <button class="btn btn-success" type="submit">Search</button>
 						</form>
 					</div>
