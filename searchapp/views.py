@@ -8,7 +8,17 @@ def results(request):
         courses = []
         if query:
             queryset = Q(title__icontains=query)
-            courses = Courses.objects.filter(query).distinct()
+            courseQuery = Courses.objects.filter(queryset).distinct()
+            for i in courseQuery:
+                courses.append({
+                    "title" : i.title,
+                    "teacher" : i.teacher ,                    
+                    "price" : i.price ,
+                    "category" : i.category ,
+                    "time" : i.time ,
+                    "image" : i.image ,
+                    "Url" : i.Url ,
+                })
         context = {
             "courses" : courses ,
         }

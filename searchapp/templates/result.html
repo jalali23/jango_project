@@ -141,130 +141,39 @@
 			    	</div>
 			    	<!--Cards-->
 			    	<div class="row">
-					    <div class="card">
-							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
-							<div class="card-header">
-								<span class="badge badge-light">
-							        	آموزش برنامه نویس پایتون  از مبتدی
-							    </span>
-							     <div class="row1">
-								    <span class="badge badge-dark"  >
-							        	    استاد:
-						            </span>
-									<span class="badge badge-dark">
-										محمد اردوخانی
-						            </span>
-					            </div>
-							</div>
-							<div class="card-body" >
-								<div class="row1">
-									<span class="badge badge-success">قیمت:</span>
-									<span class="badge badge-success"style="margin-left:15px;">
-								     	2500000
-								    </span>
+						{% for course in courses %}
+							<div class="card">
+								<img class="card-img-top" src={{course.image}} alt="Card image">
+								<div class="card-header">
+									<span class="badge badge-light">
+											{{course.title}}
+									</span>
+									<div class="row1">
+										<span class="badge badge-dark"  >
+												استاد:
+										</span>
+										<span class="badge badge-dark">
+											{{course.teacher}}
+										</span>
+									</div>
 								</div>
-								<div class="row2">
-									<span class="badge badge-warning">زمان:</span>
-									<span class="badge badge-warning">2:30:15</span>
+								<div class="card-body" >
+									<div class="row1">
+										<span class="badge badge-success">قیمت:</span>
+										<span class="badge badge-success"style="margin-left:15px;">
+											{{course.price}}
+										</span>
+									</div>
+									<div class="row2">
+										<span class="badge badge-warning">زمان:</span>
+										<span class="badge badge-warning">{{course.time}}</span>
+									</div>
 								</div>
-							</div>
-							<div class="footer">
-								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
-							</div>
-					    </div>
-					    <div class="card">
-							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
-							<div class="card-header">
-								<span class="badge badge-light">
-							        	آموزش برنامه نویس پایتون  از مبتدی
-							    </span>
-							     <div class="row1">
-								    <span class="badge badge-dark"  >
-							        	    استاد:
-						            </span>
-									<span class="badge badge-dark">
-										محمد اردوخانی
-						            </span>
-					            </div>
-							</div>
-							<div class="card-body" >
-								<div class="row1">
-									<span class="badge badge-success">قیمت:</span>
-									<span class="badge badge-success"style="margin-left:15px;">
-								     	2500000
-								    </span>
-								</div>
-								<div class="row2">
-									<span class="badge badge-warning">زمان:</span>
-									<span class="badge badge-warning">2:30:15</span>
+								<div class="footer">
+									<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
 								</div>
 							</div>
-							<div class="footer">
-								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
-							</div>
-					    </div>
-					    <div class="card">
-							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
-							<div class="card-header">
-								<span class="badge badge-light">
-							        	آموزش برنامه نویس پایتون  از مبتدی
-							    </span>
-							     <div class="row1">
-								    <span class="badge badge-dark"  >
-							        	    استاد:
-						            </span>
-									<span class="badge badge-dark">
-										محمد اردوخانی
-						            </span>
-					            </div>
-							</div>
-							<div class="card-body" >
-								<div class="row1">
-									<span class="badge badge-success">قیمت:</span>
-									<span class="badge badge-success"style="margin-left:15px;">
-								     	2500000
-								    </span>
-								</div>
-								<div class="row2">
-									<span class="badge badge-warning">زمان:</span>
-									<span class="badge badge-warning">2:30:15</span>
-								</div>
-							</div>
-							<div class="footer">
-								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
-							</div>
-					    </div>
-					    <div class="card">
-							<img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
-							<div class="card-header">
-								<span class="badge badge-light">
-							        	آموزش برنامه نویس پایتون  از مبتدی
-							    </span>
-							     <div class="row1">
-								    <span class="badge badge-dark"  >
-							        	    استاد:
-						            </span>
-									<span class="badge badge-dark">
-										محمد اردوخانی
-						            </span>
-					            </div>
-							</div>
-							<div class="card-body" >
-								<div class="row1">
-									<span class="badge badge-success">قیمت:</span>
-									<span class="badge badge-success"style="margin-left:15px;">
-								     	2500000
-								    </span>
-								</div>
-								<div class="row2">
-									<span class="badge badge-warning">زمان:</span>
-									<span class="badge badge-warning">2:30:15</span>
-								</div>
-							</div>
-							<div class="footer">
-								<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
-							</div>
-					    </div>
+						{% endfor %}	
 					<!--End-Cards-->
 			    	</div>
 			        <div class="row">
