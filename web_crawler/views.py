@@ -12,12 +12,12 @@ def importer(request):
             i = 1
             continue
         obj = Articles(
-            # teacher = item["teacher"],
-            # time=item["time"],
-            # price = item["price"],
-            # image = item["image"],
+             teacher = item["teacher"],
+             time=item["time"],
+             price = item["price"],
+             image = item["image"],
             title = item["title"][0],
-            #category = "دوره های آنلاین",
+            category = "مدیریت و بازاریابی",
             Url= item["url"],
         )
         obj.save()
