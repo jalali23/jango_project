@@ -21,46 +21,46 @@
 			  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 			    <ul class="navbar-nav">
 			        <li class="nav-item">
-		   				<a href="#" class="nav-link" >مدیریت و بازاریابی</a>
+		   				<a href="./results?q=مدیریت و بازاریابی" class="nav-link" >مدیریت و بازاریابی</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">ترفندها</a>
+		   				<a href="./results?q=ترفندها" class="nav-link">ترفندها</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">عکاسی</a>
+		   				<a href="./results?q=عکاسی" class="nav-link">عکاسی</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> نرم افزاهای کاربردی</a>
+		   				<a href="./results?q= نرم افزاهای کاربردی" class="nav-link"> نرم افزاهای کاربردی</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">مهارت های زبان</a>
+		   				<a href="./results?q=مهارت های زبان" class="nav-link">مهارت های زبان</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">انیمیشن سازی</a>
+		   				<a href="./results?q=انیمیشن سازی" class="nav-link">انیمیشن سازی</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
+		   				<a href="./results?q=هوش مصنوعی و یادگیری ماشین" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">Programing And IT</a>
+		   				<a href="./results?q=Programing And IT" class="nav-link">Programing And IT</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">وبینار</a>
+		   				<a href="./results?q=وبینار" class="nav-link">وبینار</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">دروس مدرسه ای </a>
+		   				<a href="./results?q=دروس مدرسه ای " class="nav-link">دروس مدرسه ای </a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> آموزش های دانشگاهی</a>
+		   				<a href="./results?q= آموزش های دانشگاهی" class="nav-link"> آموزش های دانشگاهی</a>
 		   			</li>
 		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> مدیریت فردی و اجتماعی</a>
+		   				<a href="./results?q= مدیریت فردی و اجتماعی" class="nav-link"> مدیریت فردی و اجتماعی</a>
 		   			</li>
 			    </ul>
 			  </div>
 			  <nav>
-				  <form class="form-inline" action="/action_page.php">
-				    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+				  <form class="form-inline" action={% url 'results' %}>
+				    <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search">
 				    <button class="btn btn-success btn-sm" type="submit">Go</button>
 				  </form>
 			  </nav>
@@ -71,7 +71,7 @@
 			    <div class="col-sm-4 bg-HoneyDew">
 			    	<div class="row">
                     	<div class="col">
-                    		<a href="articles_page.html" class="btn btn-info" role="button" id="articles"> همه ی مقالات
+                    		<a href={% url 'results' %} class="btn btn-info" role="button" id="articles"> همه ی مقالات
                     		</a>
                     	</div>
                     </div>
@@ -143,7 +143,7 @@
 			    	<div class="row">
 						{% for course in courses %}
 							<div class="card">
-								<img class="card-img-top" src={{course.image}} alt="Card image">
+								<img class="card-img-top" src="{{course.image}}" alt="Card image">
 								<div class="card-header">
 									<span class="badge badge-light">
 											{{course.title}}
@@ -170,7 +170,7 @@
 									</div>
 								</div>
 								<div class="footer">
-									<a href="#" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
+									<a href="{{course.url}}" class="btn btn-sm stretched-link btn-primary">بیشتر</a>
 								</div>
 							</div>
 						{% endfor %}	
