@@ -2,12 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Courses(models.Model):
-    title=models.CharField(max_length=200)
+    title=models.CharField(max_length=200,null=True,blank=True)
     teacher=models.CharField(max_length=200,blank=True,null=True)
     price=models.CharField(max_length=200,blank=True,null=True)
-    category = models.CharField(max_length=128)
+    category = models.CharField(max_length=128,null=True,blank=True)
     time=models.CharField(max_length=200,blank=True,null=True)
-    image=models.CharField(max_length=200)
+    image=models.CharField(max_length=200,null=True,blank=True)
     Url=models.URLField()
 
     def __str__(self):
