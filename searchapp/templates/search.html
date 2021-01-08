@@ -67,6 +67,11 @@
 						<form class="form-inline" action={% url 'results' %} method="GET">
 						    <input id="Search" name="q" class="form-control mr-sm-2" type="text" placeholder="جستجوی دوره">
 						    <button class="btn btn-success" type="submit">دوره ها</button>
+						</form>
+					</div>
+					<div id="row3">
+						<form class="form-inline" action={% url "articles" %} method="GET">
+						    <input id="Search" name="q" class="form-control mr-sm-2" type="text" placeholder="جستجوی مقالات">
 						    <button class="btn btn-success" type="submit">مقالات</button>
 						</form>
 					</div>

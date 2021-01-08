@@ -76,49 +76,15 @@
 			    			</span>
                         </h4>
 			    	</div>
-				    <div>
-				    	<br>
-						<div class="card text-white">
-						  <div class="card-body">
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
-						<br>
-						<div class="card text-white">
-						  <div class="card-body">
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
-						<br>
-						<div class="card text-white">
-						  <div class="card-body">
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
-						<br>
-						<div class="card text-white">
-						  <div class="card-body">
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
-						<br>
-						<div class="card text-white">
-						  <div class="card-body" >
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
-						<br>
-						<div class="card text-white">
-						  <div class="card-body">
-						  	<a class="card-text" href="#">
-						  	کسب دانش از طریق درون نگریِ همگاریِ بین انسان و روبات</a>
-						  </div>
-						</div>
+						{% for article in articles %}
+							<div class="card text-white">
+								<div class="card-body">
+								<a class="card-text" href={{article.Url}}>
+									{{article.title}}
+								</a>
+								</div>
+							</div>
+						{% endfor %}
 						<br>
 				    </div>
 			        <div class="row">
