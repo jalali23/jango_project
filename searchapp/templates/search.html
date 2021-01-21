@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="row1">
-			<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top ">
+			<nav id="navbar" class="navbar navbar-expand-xl navbar-dark fixed-top ">
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -21,7 +21,7 @@
 			  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 			    <ul class="navbar-nav">
 			        <li class="nav-item">
-		   				<a href="#" class="nav-link" >مدیریت و بازاریابی</a>
+		   				<a href="#" class="nav-link"  >مدیریت و بازاریابی</a>
 		   			</li>
 		   			<li class="nav-item">
 		   				<a href="#" class="nav-link">ترفندها</a>
@@ -62,29 +62,30 @@
 		<div class="container-fluid">
 	     	<!--SEARCH-->
 			<div id="row1" class="row">
-				<div id="row2" class="row">
-					<div id="row3">
+				<div  id="search" class="row">
+					<div id="search_box">
 						<form class="form-inline" action={% url 'results' %} method="GET">
 						    <input id="Search" name="q" class="form-control mr-sm-2" type="text" placeholder="جستجوی دوره">
-						    <button class="btn btn-success" type="submit">دوره ها</button>
+						    <button class="btn btn-primary" id='btn-results' type="submit">دوره ها</button>
 						</form>
 					</div>
-					<div id="row3">
+					<div id="search_box">
 						<form class="form-inline" action={% url "articles" %} method="GET">
 						    <input id="Search" name="q" class="form-control mr-sm-2" type="text" placeholder="جستجوی مقالات">
-						    <button class="btn btn-success" type="submit">مقالات</button>
+						    <button class="btn btn-primary" id='btn-results' type="submit">مقالات</button>
 						</form>
 					</div>
 				</div>
 			</div>
-			<!--footer-->
-			<div class="row bg-dark">
+		</div>
+	<!--footer-->
+			<div class="navbar bg-dark fixed-bottom">
 				<button class="btn-info" style="margin-left:10px; ">درباره سایت</button>
                     <p id='Footer'  style="margin-top:10px; ">
                       به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
                     </p>
 			</div>
-			<!--end_footer-->
-		</div>
+			<!--end footer-->
 	</body>
+
 </html>

@@ -16,27 +16,18 @@
 		url(../fonts/BTITRBD.woff) format('woff'),
 		url(../fonts/BTITRBD.ttf) format('truetype');
 }
-		
+
 .container-fluid{
 	background: AliceBlue ;
 }
-.navbar{
-	background-image: linear-gradient(to right, MediumBlue  , Purple);
+#navbar{
+	background-image: linear-gradient(to bottom, blue, DodgerBlue );
+}
 
-}
-.navbar-nav{
-	margin-top:-1%;
-}
 .nav-link{
 	font-family:  Bkoodak;
     letter-spacing:1px;
-    font-size: 15px;
-
-}
-.nav-link:hover{
-	font-family:  Bkoodak;
-    letter-spacing:1px;
-    font-size: 16px;
+    font-size: 20px;
 
 }
 .nav-item
@@ -54,20 +45,18 @@
     text-align:right;
     color: MintCream;
 }
-#row1{
-	height:575px;
-}
-#row2{
-	margin-top:10% ;
+
+#search{
+	margin-top:18% ;
 	margin-bottom:10%;
 	width:70%;
 	margin-right:10%;
 }
-#row3{
+#search_box{
 	width: 50%;
-	height:40%;
+	height:30%;
 	margin-right:30%;
-	margin-top:10%;
+	margin-top:3%;
 }
 .card-columns .card{
 	width:40%;
@@ -76,16 +65,17 @@
 .card-text{
 	font-family:Bkoodak;
 }
-.btn-success{
+.btn{
 	margin-right:35%;
 	margin-top:5%;
 	width:38%;
 }
+
 #Search{
 	width:100%;
 }
 .btn-info{
-	margin-left:10px; 
+	margin-left:10px;
 }
 .text-white{
     background-image: linear-gradient(to right, LightBlue, Azure);
@@ -94,4 +84,18 @@
 }
 .page-link:hover{
     background-image: linear-gradient(to right, DarkTurquoise  ,Aquamarine  );
+}
+#btn-results:hover{
+    background-color:Green;
+}
+
+.btn-success{
+	margin-right:35%;
+	margin-top:5%;
+	width:38%;
+}
+#Footer{
+    margin-right:1%;
+    width:100%;
+    text-align:right;
 }

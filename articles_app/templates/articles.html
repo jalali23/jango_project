@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="row1">
-			<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+			<nav id="navbar" class="navbar navbar-expand-xl navbar-dark  fixed-top">
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -59,8 +59,7 @@
 			  </div>
 			  <nav>
 				  <form class="form-inline" action="/action_page.php">
-				    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-				    <button class="btn-sm btn-success" type="submit">دوره ها</button>
+				    <input class="form-control mr-sm-2" style="width:100%;" type="text" name="q" placeholder="Search">
 				    <button class="btn-sm btn-success" type="submit">مقالات</button>
 				  </form>
 			  </nav>
@@ -68,8 +67,8 @@
 		</div>
 		<div class="container-fluid">
             <div class="row">
-			    <div class="col-sm-12">
-			    	<div class="row" style="margin-top: 2%; margin-right:2%;">
+			    <div class="col-sm-12" >
+			    	<div class="row" style="margin-top:8%; margin-right:2%;">
 			    		<h4>
 			    			<span class="badge badge-pill badge-dark">
                                    مقالات
@@ -86,26 +85,27 @@
 							</div>
 						{% endfor %}
 						<br>
-				    </div>
-			        <div class="row">
-			        	<ul class="pagination justify-content-center">
-						  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-						  <li class="page-item"><a class="page-link" href="#">3</a></li>
-						  <li class="page-item"><a class="page-link" href="#">2</a></li>
-						  <li class="page-item"><a class="page-link" href="#">1</a></li>
-						  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						</ul>
-			        </div>
+				</div>
+			</div>
+			    <div class="row">
+					<ul class="pagination justify-content-center">
+					  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+					  <li class="page-item"><a class="page-link" href="#">3</a></li>
+					  <li class="page-item"><a class="page-link" href="#">2</a></li>
+					  <li class="page-item"><a class="page-link" href="#">1</a></li>
+					  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					</ul>
 			    </div>
 			</div>
-			<!--footer-->
-			<div class="row bg-dark">
-				<button class="btn-info" style="margin-left:10px; ">درباره سایت</button>
-                    <p id='Footer'  style="margin-top:10px; ">
-                      به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
-                    </p>
-			</div>
-			<!--end footer-->
 		</div>
+<!--footer-->
+		<div class="navbar bg-dark fixed-bottom >
+			<button class="btn-info" style="margin-left:10px; ">درباره سایت</button>
+				<p id='Footer'  style="margin-top:10px; ">
+				  به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
+				</p>
+		</div>
+		<!--end footer-->
+
 	</body>
 </html>
