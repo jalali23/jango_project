@@ -5,8 +5,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>result</title>
-		<link rel="stylesheet" href={% static "css/bootstrap.min.css"%} >
-		<link rel="stylesheet" href={% static "css/style1.css"%} >
+		<link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+		<link rel="stylesheet" href="{% static 'css/style1.css' %}">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src={% static "js/bootstrap.min.js" %}></script>
@@ -23,40 +23,40 @@
 					<ul class="navbar-nav">
 
 						<li class="nav-item">
-							<a href="./results?q=مدیریت و بازاریابی" class="nav-link" >مدیریت و بازاریابی</a>
+							<a href="./results?category=مدیریت و بازاریابی" class="nav-link" >مدیریت و بازاریابی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=ترفندها" class="nav-link">ترفندها</a>
+							<a href="./results?category=ترفندها" class="nav-link">ترفندها</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=عکاسی" class="nav-link">عکاسی</a>
+							<a href="./results?category=عکاسی" class="nav-link">عکاسی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q= نرم افزاهای کاربردی" class="nav-link"> نرم افزاهای کاربردی</a>
+							<a href="./results?category= نرم افزاهای کاربردی" class="nav-link"> نرم افزاهای کاربردی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=مهارت های زبان" class="nav-link">مهارت های زبان</a>
+							<a href="./results?category=مهارت های زبان" class="nav-link">مهارت های زبان</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=انیمیشن سازی" class="nav-link">انیمیشن سازی</a>
+							<a href="./results?category=انیمیشن سازی" class="nav-link">انیمیشن سازی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=هوش مصنوعی و یادگیری ماشین" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
+							<a href="./results?category=هوش مصنوعی و یادگیری ماشین" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=Programing And IT" class="nav-link">Programing And IT</a>
+							<a href="./results?category=Programing And IT" class="nav-link">Programing And IT</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=وبینار" class="nav-link">وبینار</a>
+							<a href="./results?category=وبینار" class="nav-link">وبینار</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q=دروس مدرسه ای " class="nav-link">دروس مدرسه ای </a>
+							<a href="./results?category=دروس مدرسه ای " class="nav-link">دروس مدرسه ای </a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q= آموزش های دانشگاهی" class="nav-link"> آموزش های دانشگاهی</a>
+							<a href="./results?category= آموزش های دانشگاهی" class="nav-link"> آموزش های دانشگاهی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?q= مدیریت فردی و اجتماعی" class="nav-link"> مدیریت فردی و اجتماعی</a>
+							<a href="./results?category= مدیریت فردی و اجتماعی" class="nav-link"> مدیریت فردی و اجتماعی</a>
 						</li>
 					</ul>
 				  </div>
@@ -64,7 +64,7 @@
 			  <nav>
 				  <form class="form-inline" action={% url 'results' %}>
 				    <input class="form-control mr-sm-2" style="width:100%;" type="text" name="q" placeholder="Search">
-				    <button class="btn-sm btn-success" type="submit">مقالات</button>
+				    <button class="btn-sm btn-success" type="submit">دوره ها</button>
 				  </form>
 			  </nav>
 			</nav>
@@ -75,7 +75,7 @@
 							<div class="d-sm-flex align-items-center">
 								<div class="mr-auto">
 									<div class="logo">
-										<a href="#">
+										<a href={% url 'search' %}>
 											<img id="home" src="https://www.iconsdb.com/icons/preview/orange/home-xxl.png" alt="خانه">
 										</a>
 									</div>
@@ -177,13 +177,23 @@
 					<!--End-Cards-->
 			    	</div>
 			        <div class="row">
-			        	<ul class="pagination justify-content-center">
-						  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-						  <li class="page-item"><a class="page-link" href="#">3</a></li>
-						  <li class="page-item"><a class="page-link" href="#">2</a></li>
-						  <li class="page-item"><a class="page-link" href="#">1</a></li>
-						  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						</ul>
+						{% if courses %}
+							<ul class="pagination justify-content-center">
+							{% if courses.has_previous %}
+								<li class="page-item">
+									<a  class="page-link" href="?page={{ courses.previous_page_number }} {% if query %}&q={{query}}{% else %}&category={{category}}{% endif %}">previous</a>
+								</li>
+							{% endif %}
+							<li "page-item">
+								<a class="page-link" >Page {{ courses.number }} of {{ courses.paginator.num_pages }}</a>
+							</li>
+							{% if courses.has_next %}
+								<li class="page-item">
+									<a  class="page-link" href="?page={{ courses.next_page_number }} {% if query %}&q={{query}}{% else %}&category={{category}}{% endif %}">next</a>
+								</li>
+							{% endif %}
+							</ul>
+						{% endif %}
 			        </div>
 			    </div>
 			</div>
