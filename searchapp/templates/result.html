@@ -4,7 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>result</title>
+		<title>Courses  |  
+		{% if query %}{{query}}{% elif category %}{{category}}{% else %} دوره ها {% endif %}
+		</title>
 		<link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
 		<link rel="stylesheet" href="{% static 'css/style1.css' %}">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -112,7 +114,7 @@
 		                      	 قیمت
 		                         </span>
 							  </h5>
-							  <select name="cars" class="custom-select" >
+							  <select name="price" class="custom-select" >
 						     	<option value=""> </option>
 							    <option value="volvo">1000 تا 100000</option>
 							    <option value="fiat">100000 تا 200000</option>
