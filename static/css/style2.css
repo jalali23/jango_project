@@ -48,15 +48,22 @@
 
 #search{
 	margin-top:18% ;
-	margin-bottom:10%;
-	width:70%;
-	margin-right:10%;
+	margin-bottom:15%;
+	width:50%;
+	margin-right:20%;
+
+}
+#row1.row{
+    text-align:center;
+    padding-top:10% ;
+
 }
 #search_box{
 	width: 50%;
 	height:30%;
 	margin-right:30%;
 	margin-top:3%;
+
 }
 .card-columns .card{
 	width:40%;
