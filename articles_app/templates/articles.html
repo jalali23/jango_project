@@ -4,70 +4,44 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>articles</title>
-		<link rel="stylesheet" href={% static "css/bootstrap.min.css"%} >
-		<link rel="stylesheet" href={% static "css/style2.css"%} >
+		<title>Articles  |  
+		{% if query %}{{query}}{% elif category %}{{category}}{% else %} دوره ها {% endif %}
+		</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+		<link rel="stylesheet" href="{% static 'css/style2.css' %}" >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src={% static "js/bootstrap.min.js" %}></script>
 	</head>
 	<body>
 		<div class="row1">
-			<nav id="navbar" class="navbar navbar-expand-xl navbar-dark  fixed-top">
+			<nav id="navbar" class="navbar navbar-expand-sm navbar-dark  ">
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
 			  <!-- Navbar links -->
 			  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-			    <ul class="navbar-nav">
-			        <li class="nav-item">
-		   				<a href="#" class="nav-link" >مدیریت و بازاریابی</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">ترفندها</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">عکاسی</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> نرم افزاهای کاربردی</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">مهارت های زبان</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">انیمیشن سازی</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">هوش مصنوعی و یادگیری ماشین</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">Programing And IT</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">وبینار</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link">دروس مدرسه ای </a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> آموزش های دانشگاهی</a>
-		   			</li>
-		   			<li class="nav-item">
-		   				<a href="#" class="nav-link"> مدیریت فردی و اجتماعی</a>
-		   			</li>
-			    </ul>
-			  </div>
-			  <nav>
-				  <form class="form-inline" action="/action_page.php">
+			    <header class="row" >
+					<div class="col-12 ">
+						<div class="logo"  style='text-align:center;'>
+							<a href={% url 'search' %}>
+								<img id="home" style='width:20%;
+								 height:20%;' src="https://www.iconsdb.com/icons/preview/orange/home-xxl.png" alt="خانه" >
+							</a>
+						</div>
+					</div>
+	            </header>
+			    <nav>
+				  <form class="form-inline" action={% url 'articles' %}>
 				    <input class="form-control mr-sm-2" style="width:100%;" type="text" name="q" placeholder="Search">
 				    <button class="btn-sm btn-success" type="submit">مقالات</button>
 				  </form>
-			  </nav>
+			    </nav>
+			  </div>
 			</nav>
 		</div>
 		<div class="container-fluid">
             <div class="row">
-			    <div class="col-sm-12" >
+			    <div class="col" >
 			    	<div class="row" style="margin-top:8%; margin-right:2%;">
 			    		<h4>
 			    			<span class="badge badge-pill badge-dark">
@@ -87,21 +61,32 @@
 						<br>
 				</div>
 			</div>
-			    <div class="row">
-					<ul class="pagination justify-content-center">
-					  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-					  <li class="page-item"><a class="page-link" href="#">3</a></li>
-					  <li class="page-item"><a class="page-link" href="#">2</a></li>
-					  <li class="page-item"><a class="page-link" href="#">1</a></li>
-					  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-					</ul>
-			    </div>
-			</div>
 		</div>
+		<div class="row">
+			{% if articles %}
+				<ul class="pagination justify-content-center">
+					{% if articles.has_previous %}
+						<li class="page-item">
+							<a  class="page-link" href="?page={{ articles.previous_page_number }}&q={{query}}">previous</a>
+						</li>
+					{% endif %}
+					<li "page-item">
+						<a class="page-link" >Page {{ articles.number }} of {{ articles.paginator.num_pages }}</a>
+					</li>
+					{% if articles.has_next %}
+						<li class="page-item">
+							<a  class="page-link" href="?page={{ articles.next_page_number }}&q={{query}}">next</a>
+						</li>
+					{% endif %}
+				</ul>
+			{% endif %}
+		</div>
+
 <!--footer-->
-		<div class="navbar bg-dark  ">
-			<button class="btn-info" style="margin-left:10px;"> درباره سایت</button>
-				<p id='Footer'  style="margin-top:10px; ">
+
+		<div class="navbar bg-dark " style='margin-top:17.5%;'>
+			<button class="btn-info" style="margin-left:10px;">درباره سایت</button>
+				<p id="Footer"  style="margin-top:10px;">
 				  به شما کاربر محترم این امکان داده میشود تا در کمترین زمان از بین چندین سایت  دوره خود را بیابید. همچنین  میتوانید از بین مقالات  مختلف مقاله مورد نظر خود را جستجو  نمایید.
 				</p>
 		</div>
