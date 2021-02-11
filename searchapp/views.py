@@ -1,14 +1,13 @@
 from django.shortcuts import render
-from web_crawler.models import Courses
 
 def results(request):
+    from web_crawler.models import Courses
     from django.core.paginator import Paginator
     from django.db.models import Q
     if request.method == "GET":
         query = request.GET.get('q')
         category = request.GET.get('category')
         page = request.GET.get('page')
-        courses = Courses.objects.all()
         price = None
         
         if category:
@@ -26,7 +25,8 @@ def results(request):
         context = {
             "courses" : courses ,
             "category" : category,
-            "price" : price
+            "price" : price ,
+            "query" : query ,
         }
     return render(request,'result.html',context)
 
