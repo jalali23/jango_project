@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Courses  |  
-		{% if query %}{{query}}{% elif category %}{{category}}{% else %} دوره ها {% endif %}
+		{{ title }}
 		</title>
 		<link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
 		<link rel="stylesheet" href="{% static 'css/style1.css' %}">
@@ -95,13 +95,13 @@
 			    <div class="col-sm-4 bg-HoneyDew">
                     <div class="row" >
 					    <div class="col">
-					    	<form>
+					    	<form action="{% url 'results' %}?page={{ page }}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">
 								  <h5>
 									<span class="badge badge-warning" id="title_filter">
 										فیلترها
 									</span>
 								  </h5>
-								  <select name="Category" id="filter1" class="custom-select">
+								  <select name="options" id="filter1" class="custom-select">
 									<option value=""> </option>
 									<option value="مشاوره رایگان"> ارائه مدرک بین المللی</option>
 									<option value="ضمانت بازگشت وجه">ضمانت بازگشت وجه</option>
@@ -112,14 +112,14 @@
 									 قیمت
 									 </span>
 								  </h5>
-								  <select name="Category" class="custom-select" >
+								  <select name="price" class="custom-select" >
 										<option value=""> </option>
-										<option value="volvo">1000 تا 100000</option>
-										<option value="fiat">100000 تا 200000</option>
-										<option value="audi">200000 تا 300000</option>
-										<option value="audi">300000 تا 400000</option>
-										<option value="audi">400000 تا 500000</option>
-										<option value="audi">500000 به بالا</option>
+										<option value="1000,100000">1000 تا 100000</option>
+										<option value="100000,200000">100000 تا 200000</option>
+										<option value="200000,300000">200000 تا 300000</option>
+										<option value="300000,400000">300000 تا 400000</option>
+										<option value="400000,500000">400000 تا 500000</option>
+										<option value="500000">500000 به بالا</option>
 								  </select>
 								  <button type="submit" class="btn btn-outline-success btn-sm" id="filter2"
 									style="margin-left:30%;width:40%;">
@@ -136,7 +136,7 @@
 			                      	برگزیده ها
 			                        </span>
 			                    </h5>
-								<select name="Category" id="cars" class="custom-select">
+								<select name="category" id="cars" class="custom-select">
 								    <option value="برخی رایگان ها">برخی رایگان ها</option>
 								    <option value="برخی جدیدها">برخی جدیدها</option>
 								    <option value="برخی پربازدیدها">برخی پربازدیدها</option>
@@ -181,7 +181,7 @@
 							<ul class="pagination justify-content-center">
 							{% if courses.has_previous %}
 								<li class="page-item">
-									<a  class="page-link" href="?page={{ courses.previous_page_number }} {% if query %}&q={{query}}{% else %}&category={{category}}{% endif %}">previous</a>
+									<a  class="page-link" href="?page={{ courses.previous_page_number }}{% if price %}&price={{price}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">previous</a>
 								</li>
 							{% endif %}
 							<li "page-item">
@@ -189,7 +189,7 @@
 							</li>
 							{% if courses.has_next %}
 								<li class="page-item">
-									<a  class="page-link" href="?page={{ courses.next_page_number }}&{% if query %}q={{query}}{% else %}category={{category}}{% endif %}">next</a>
+									<a  class="page-link" href="?page={{ courses.next_page_number }}{% if price %}&price={{price}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">next</a>
 								</li>
 							{% endif %}
 							</ul>

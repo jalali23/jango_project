@@ -23,17 +23,14 @@ def importer(request):
         obj.save()
     return HttpResponse("Done!")
 def shower(request):
-    data_list=[]
-    data_str=''
-    data_list=set(data_list)
     data=Courses.objects.all()
-    for i in data:
-        if i.category not in data_list:
-            data_list.add(i.category+'----\n')
-    for i in data_list:
-        data_str += str(i)+ "\n\t"
-    print(data_str)
-    return HttpResponse(data_list)
+    for course in data:
+        if "دروس مدرسه ای" in course.category:
+            course.image = course.image[1:-1]
+            course.save()
+    return HttpResponse("done!")
+
+
 #
 # def deleter(request):
 #     query=Articles.objects.all()
