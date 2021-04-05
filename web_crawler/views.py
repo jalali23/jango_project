@@ -24,11 +24,15 @@ def importer(request):
     return HttpResponse("Done!")
 def shower(request):
     data=Courses.objects.all()
+    counter = 0
     for course in data:
-        if "دروس مدرسه ای" in course.category:
-            course.image = course.image[1:-1]
-            course.save()
-    return HttpResponse("done!")
+        # print(type(course.price))
+        if course.price== "None" or course.price == None or "رایگان" in course.price:
+            counter += 1
+            # course.price = 0
+            # course.save()
+            # print(course.price)
+    return HttpResponse(counter)
 
 
 #
