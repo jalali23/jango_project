@@ -34,7 +34,7 @@
 							<a href="./results?category=عکاسی" class="nav-link">عکاسی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?category= نرم افزاهای کاربردی" class="nav-link"> نرم افزاهای کاربردی</a>
+							<a href="./results?category=نرم افزاهای کاربردی" class="nav-link"> نرم افزاهای کاربردی</a>
 						</li>
 						<li class="nav-item">
 							<a href="./results?category=مهارت های زبان" class="nav-link">مهارت های زبان</a>
@@ -55,10 +55,10 @@
 							<a href="./results?category=دروس مدرسه ای " class="nav-link">دروس مدرسه ای </a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?category= آموزش های دانشگاهی" class="nav-link"> آموزش های دانشگاهی</a>
+							<a href="./results?category=آموزش های دانشگاهی" class="nav-link"> آموزش های دانشگاهی</a>
 						</li>
 						<li class="nav-item">
-							<a href="./results?category= مدیریت فردی و اجتماعی" class="nav-link"> مدیریت فردی و اجتماعی</a>
+							<a href="./results?category=مدیریت فردی و اجتماعی" class="nav-link"> مدیریت فردی و اجتماعی</a>
 						</li>
 					</ul>
 				  </div>
@@ -101,11 +101,11 @@
 										فیلترها
 									</span>
 								  </h5>
-								  <select name="options" id="filter1" class="custom-select">
+								  <select name="option" id="filter1" class="custom-select">
 									<option value=""> </option>
-									<option value="مشاوره رایگان"> ارائه مدرک بین المللی</option>
-									<option value="ضمانت بازگشت وجه">ضمانت بازگشت وجه</option>
-									<option value="ارتباط با استاد">ارتباط با استاد</option>
+									<option value="collabration">همکاری با ما</option>
+									<option value="return_money">ضمانت بازگشت وجه</option>
+									<option value="deliberation">ارتباط با استاد</option>
 								  </select>
 								  <h5>
 									 <span id="price" class="badge badge-warning">
@@ -181,7 +181,7 @@
 							<ul class="pagination justify-content-center">
 							{% if courses.has_previous %}
 								<li class="page-item">
-									<a  class="page-link" href="?page={{ courses.previous_page_number }}{% if price %}&price={{price}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">previous</a>
+									<a  class="page-link" href="?page={{ courses.previous_page_number }}{% if price %}&price={{price}}{% endif %}{% if option %}&option={{option}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">previous</a>
 								</li>
 							{% endif %}
 							<li "page-item">
@@ -189,7 +189,7 @@
 							</li>
 							{% if courses.has_next %}
 								<li class="page-item">
-									<a  class="page-link" href="?page={{ courses.next_page_number }}{% if price %}&price={{price}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">next</a>
+									<a  class="page-link" href="?page={{ courses.next_page_number }}{% if price %}&price={{price}}{% endif %}{% if option %}&option={{option}}{% endif %}{% if query %}&q={{query}}{% elif category %}&category={{category}}{% endif %}">next</a>
 								</li>
 							{% endif %}
 							</ul>

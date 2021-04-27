@@ -9,16 +9,20 @@ def results(request):
         category = request.GET.get('category')
         page = request.GET.get('page')
         price = request.GET.get('price')
+        option = request.GET.get('option')
         
         if category:
             title = category
             courses = Courses.objects.filter(Q(category__icontains=category)).distinct()
         elif query:
             title = query
-            courses = Courses.objects.filter(Q(title__icontains=query)).distinct() 
+            courses = Courses.objects.filter(Q(title__icontains=query)).distinct()
         else:
             title = "دوره ها"
             courses = Courses.objects.all()
+        
+        if option:
+            courses = Courses.objects.filter(Q(option__icontains=option)).distinct()
 
         if price:
             prices = price.split(',')
@@ -38,6 +42,7 @@ def results(request):
             "price" : price ,
             "query" : query ,
             "title" : title ,
+            "option" : option ,
         }
     return render(request,'result.html',context)
 

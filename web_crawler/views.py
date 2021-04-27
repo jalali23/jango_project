@@ -35,9 +35,12 @@ def shower(request):
     return HttpResponse(counter)
 
 
-#
-# def deleter(request):
-#     query=Articles.objects.all()
+
+# def adder(request):
+#     query=Courses.objects.all()
 #     for i in query:
-#         i.delete()
-#     return HttpResponse(query)
+#         if "academyit" in i.Url:
+#             i.option = "deliberation"
+#             i.save()
+#             # print(i.title)
+#     return HttpResponse("done!")

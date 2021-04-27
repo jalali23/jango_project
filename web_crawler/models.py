@@ -9,6 +9,7 @@ class Courses(models.Model):
     time=models.CharField(max_length=200,blank=True,null=True)
     image=models.CharField(max_length=200,null=True,blank=True)
     Url=models.URLField()
+    option = models.CharField(max_length=25,null=True, blank=True)
 
     def __str__(self):
         return self.title
